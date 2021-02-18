@@ -8,6 +8,8 @@ target 'CreativeAgency' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+  pod 'SRSRadialGradient', :path => '../node_modules/react-native-radial-gradient'
+
   target 'CreativeAgencyTests' do
     inherit! :complete
     # Pods for testing
