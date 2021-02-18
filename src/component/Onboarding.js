@@ -5,6 +5,8 @@ import RadialGradient from 'react-native-radial-gradient';
 import WelcomeMessage from './OnboardingItems/WelcomeMessage';
 import DotsPagination from './OnboardingItems/DotsPagination';
 import Adt from './OnboardingItems/Adt';
+import Message from './OnboardingItems/Message';
+import Skip from './OnboardingItems/Skip';
 
 export const Onboarding = () => {
   const windowWidth = Dimensions.get('window').width;
@@ -26,6 +28,8 @@ export const Onboarding = () => {
         <Image source={img} />
         <DotsPagination />
         <Adt />
+        <Message />
+        <Skip />
       </View>
     </RadialGradient>
   );
