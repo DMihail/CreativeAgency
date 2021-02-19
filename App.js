@@ -1,12 +1,12 @@
 import React from 'react';
-import {View} from 'react-native';
-import {Onboarding} from './src/component/Onboarding';
+import {NavigationContainer} from '@react-navigation/native';
+import Navigator from './src/navigation/index';
 
 const App: () => React$Node = () => {
   return (
-    <>
-      <Onboarding />
-    </>
+    <NavigationContainer>
+      <Navigator />
+    </NavigationContainer>
   );
 };
 
