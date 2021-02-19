@@ -1,26 +1,43 @@
 import React from 'react';
-import {View, StyleSheet, Text, Image} from 'react-native';
+import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
 import img from '../../../assets/image/Vector.png';
 
-const Skip = () => {
+const Skip = ({navigator, routeName}) => {
+  const massRoutes = [
+    'Purse',
+    'TuranMap',
+    'Chat',
+    'Products',
+    'Immovables',
+    'Start',
+  ];
 
-  return (
-    <View style={style.container}>
-      <View style={style.button}>
-        <Image source={img} />
+  const turn = () => {
+    const index = massRoutes.indexOf(routeName);
+    navigator.navigate(massRoutes[index + 1]);
+  };
+
+  if (routeName !== massRoutes[5]) {
+    return (
+      <View style={style.container}>
+        <TouchableOpacity style={style.touch} onPress={turn}>
+          <View style={style.button}>
+            <Image source={img} />
+          </View>
+          <Text style={style.title}>Пропустить</Text>
+        </TouchableOpacity>
       </View>
-      <Text style={style.title}>
-        Пропустить
-      </Text>
-    </View>
-  );
+    );
+  }
+
+  return <View />;
 };
 
 const style = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'space-around',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   title: {
     color: 'white',
@@ -34,8 +51,11 @@ const style = StyleSheet.create({
     width: 60,
     height: 60,
     justifyContent: 'center',
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+  },
+  touch: {
+    flex: 1,
+  },
 });
 
 export default Skip;
