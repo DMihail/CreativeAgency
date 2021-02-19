@@ -34,14 +34,16 @@ const Skip = ({navigator, routeName}) => {
           <View style={style.button}>
             <Image source={img} />
           </View>
-          <Text style={style.title}>Пропустить</Text>
+          <View>
+            <Text style={style.title}>Пропустить</Text>
+          </View>
         </TouchableOpacity>
       </View>
     );
   }
 
   return (
-    <View>
+    <View style={style.container}>
       <Button onPress={turnToMain} title="Регистрация" color="#0C7952" />
       <View>
         <Text>Вход</Text>
@@ -52,14 +54,13 @@ const Skip = ({navigator, routeName}) => {
 
 const style = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'space-around',
-    alignItems: 'center',
+    flex: 3,
   },
   title: {
     color: 'white',
     fontFamily: 'Montserrat-SemiBold',
     fontSize: 14,
+    textAlign: 'left',
   },
   button: {
     borderRadius: 30,
@@ -72,6 +73,8 @@ const style = StyleSheet.create({
   },
   touch: {
     flex: 1,
+    justifyContent: 'space-around',
+    alignItems: 'center',
   },
 });
 
