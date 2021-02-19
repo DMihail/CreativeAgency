@@ -1,14 +1,12 @@
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 
-const Message = () => {
+const Message = ({message}) => {
 
   return (
     <View style={style.container}>
       <Text style={style.title}>
-        За монету туран можно покупать любые товары,
-        купить или продать
-        недвижимось и еще много всего!
+        {message}
       </Text>
     </View>
   )

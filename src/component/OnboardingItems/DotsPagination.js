@@ -2,13 +2,12 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import Dots from 'react-native-dots-pagination';
 
-const DotsPagination = () => {
-
+const DotsPagination = ({num}) => {
   return (
     <View style={style.container}>
       <Dots
-        length={7}
-        active={0}
+        length={6}
+        active={num}
         passiveColor={'#66FFFFFF'}
         activeColor={'#B2FFFFFF'}
         width={200}

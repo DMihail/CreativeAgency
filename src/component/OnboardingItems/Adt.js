@@ -1,12 +1,12 @@
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 
-const Adt = () => {
+const Adt = ({adt}) => {
 
   return (
     <View style={style.container}>
       <Text style={style.title}>
-        Кошелёк
+        {adt}
       </Text>
     </View>
   )

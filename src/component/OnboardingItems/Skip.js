@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Text,
+  Image,
+  TouchableOpacity,
+  Button,
+} from 'react-native';
 import img from '../../../assets/image/Vector.png';
 
 const Skip = ({navigator, routeName}) => {
@@ -16,6 +23,9 @@ const Skip = ({navigator, routeName}) => {
     const index = massRoutes.indexOf(routeName);
     navigator.navigate(massRoutes[index + 1]);
   };
+  const turnToMain = () => {
+    // navigator.navigate('');
+  };
 
   if (routeName !== massRoutes[5]) {
     return (
@@ -30,7 +40,14 @@ const Skip = ({navigator, routeName}) => {
     );
   }
 
-  return <View />;
+  return (
+    <View>
+      <Button onPress={turnToMain} title="Регистрация" color="#0C7952" />
+      <View>
+        <Text>Вход</Text>
+      </View>
+    </View>
+  );
 };
 
 const style = StyleSheet.create({

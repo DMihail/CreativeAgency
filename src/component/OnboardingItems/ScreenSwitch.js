@@ -36,9 +36,9 @@ const setScreen = (navigation, route) => {
       <View style={style.conteiner}>
         <WelcomeMessage />
         {setImage(route.name)}
-        <DotsPagination />
-        <Adt />
-        <Message />
+        <DotsPagination num={screens[route.name].dots} />
+        <Adt adt={screens[route.name].adt} />
+        <Message message={screens[route.name].message} />
         <Skip navigator={navigation} routeName={route.name} />
       </View>
     );
