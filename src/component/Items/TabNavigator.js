@@ -44,7 +44,9 @@ const TabNavigator = ({route, navigator}) => {
         </TouchableOpacity>
 
         <TouchableOpacity style={style.item} onPress={onPress}>
-          <Image source={require('../../../assets/image/icons/customization.png')} />
+          <Image
+            source={require('../../../assets/image/icons/customization.png')}
+          />
           <Text style={style.title}>Настройки</Text>
         </TouchableOpacity>
       </View>
@@ -54,21 +56,17 @@ const TabNavigator = ({route, navigator}) => {
 
 const style = StyleSheet.create({
   view: {
-    // flex: 1,
-    height: 80,
-    width: windowWidth,
+    flex: 1,
     borderTopRightRadius: 15,
     borderTopLeftRadius: 15,
-    backgroundColor: 'red',
-    marginVertical: 30,
   },
   conteiner: {
-    flex: 10,
+    flex: 5,
     flexDirection: 'row',
     justifyContent: 'space-around',
   },
   item: {
-    flex: 2,
+    flex: 1,
     flexDirection: 'column',
     justifyContent: 'space-around',
     alignItems: 'center',

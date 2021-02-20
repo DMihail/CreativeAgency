@@ -1,9 +1,17 @@
 import React from 'react';
-import {View, StyleSheet, Text, Image, FlatList} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Text,
+  Image,
+  FlatList,
+  SafeAreaView,
+} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const MessageList = ({navigator}) => {
   return (
-    <View>
+    <SafeAreaView style={style.conteiner}>
       <FlatList
         data={massMessage}
         renderItem={(item) => {
@@ -11,30 +19,71 @@ const MessageList = ({navigator}) => {
         }}
         keyExtractor={(item) => item.id.toString()}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 
 const ListItem = ({item, navigator}) => {
-  return(
-    <View>
-      <Image sourse={item.image} />
+  return (
+    <View style={style.item}>
+      <View style={{flex: 1}}>
+        <Image source={item.item.image} />
+      </View>
+
+      <View
+        style={{flex: 4, flexDirection: 'row', justifyContent: 'space-around'}}>
+        <View style={{flexDirection: 'column', justifyContent: 'center'}}>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+            }}>
+            <Image source={require('../../../assets/image/icons/turan.png')} />
+            <Text style={style.title}>{item.item.title}</Text>
+            <Image source={require('../../../assets/image/icons/V.png')} />
+          </View>
+          <Text style={style.subtitle}>{item.item.subtitle}</Text>
+        </View>
+
+        <View
+          style={{flexDirection: 'column', justifyContent: 'space-between'}}>
+          <Text style={style.subtitle}>{item.item.time}</Text>
+          <Text style={style.subtitle}>{item.item.num}</Text>
+        </View>
+      </View>
     </View>
   );
-
 };
 
+const tornToDialog = () => {};
 
 const style = StyleSheet.create({
   conteiner: {
-    flex: 1,
+    flex: 8,
   },
-  item: {},
+  item: {
+    flex: 1,
+    borderColor: 'black',
+    borderWidth: 5,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+  title: {
+    color: 'white',
+    fontSize: 14,
+    textAlign: 'center',
+  },
+  subtitle: {
+    color: 'white',
+    fontSize: 12,
+    textAlign: 'right',
+    width: 200,
+  },
 });
 
 const massMessage = [
   {
-    id: 123121121,
+    id: 1,
     title: 'Turan news',
     subtitle: 'Bitcoin снова поднялся вверх, его стоимость $28 000',
     time: '14:16',
@@ -44,7 +93,7 @@ const massMessage = [
     image: require('../../../assets/image/user/turan.png'),
   },
   {
-    id: 22332432312,
+    id: 2,
     title: 'Артем Самайда',
     subtitle: 'Привет, скинь мне пару битков, я эфирчика подкину)',
     time: '14:16',
@@ -54,7 +103,7 @@ const massMessage = [
     image: require('../../../assets/image/user/artemc.png'),
   },
   {
-    id: 3353535,
+    id: 3,
     title: 'Василий Николаевич',
     subtitle: 'Здравстуйте, могу предложить  новые способы зароботка, инт...',
     time: '13:40',
@@ -64,7 +113,7 @@ const massMessage = [
     image: require('../../../assets/image/user/vasa.png'),
   },
   {
-    id: 4577567,
+    id: 4,
     title: 'Товары для дома',
     subtitle: 'Привет, скинь мне пару битков, я эфирчика подкину)',
     time: '14:16',
@@ -74,7 +123,7 @@ const massMessage = [
     image: require('../../../assets/image/user/girl1.png'),
   },
   {
-    id: 52423468,
+    id: 5,
     title: 'Артем Самайда',
     subtitle: 'Привет, скинь мне пару битков, я эфирчика подкину)',
     time: '14:16',
@@ -84,7 +133,7 @@ const massMessage = [
     image: require('../../../assets/image/user/artem.png'),
   },
   {
-    id: 612315465,
+    id: 6,
     title: 'Jeneffer234',
     subtitle: 'Здравстуйте, могу предложить  новые способы зароботка, инт...',
     time: '13:40',
@@ -93,24 +142,24 @@ const massMessage = [
     image: require('../../../assets/image/user/Jeneffer234.png'),
   },
   {
-    id: 724257,
+    id: 7,
     title: 'Товары для дома',
     subtitle: 'Привет, скинь мне пару битков, я эфирчика подкину)',
     time: '14:16',
     num: '',
     leftIcon: false,
     rightIcon: true,
-    image: require('../../../assets/image/user/Товары для дома.png'),
+    image: require('../../../assets/image/user/HP.png'),
   },
   {
-    id: 775323348,
+    id: 8,
     title: 'Товары для дома',
     subtitle: 'Привет, скинь мне пару битков, я эфирчика подкину)',
     time: '14:16',
     num: '',
     leftIcon: false,
     rightIcon: false,
-    image: require('../../../assets/image/user/Товары для дома.png'),
+    image: require('../../../assets/image/user/HP.png'),
   },
 ];
 

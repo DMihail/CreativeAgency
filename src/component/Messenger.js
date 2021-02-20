@@ -37,7 +37,7 @@ const style = StyleSheet.create({
     flex: 1,
   },
   conteiner: {
-    flex: 1,
+    flex: 10,
     justifyContent: 'space-between',
   },
   title: {
@@ -45,10 +45,9 @@ const style = StyleSheet.create({
     fontSize: 17,
   },
   header: {
-    height: 50,
+    flex: 1,
     justifyContent: 'space-around',
     flexDirection: 'row',
-    marginVertical: 10,
   },
 });
 
