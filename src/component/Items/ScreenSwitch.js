@@ -8,7 +8,7 @@ import DotsPagination from './DotsPagination';
 import Adt from './Adt';
 import Message from './Message';
 import Skip from './Skip';
-import screens from './OnboardingItems.json';
+import screens from '../../jsons/OnboardingItems.json';
 
 const ScreenSwitch = ({navigation, route}) => {
   const windowWidth = Dimensions.get('window').width;
@@ -45,12 +45,12 @@ const setScreen = (navigation, route) => {
 
 const setImage = (index) => {
   const images = {
-    Purse: require('../../../assets/image/data.png'),
-    TuranMap: require('../../../assets/image/finance.png'),
-    Chat: require('../../../assets/image/messages.png'),
-    Products: require('../../../assets/image/shopping.png'),
-    Immovables: require('../../../assets/image/immovables.png'),
-    Start: require('../../../assets/image/Subtract.png'),
+    Purse: require('../../../assets/image/screens/data.png'),
+    TuranMap: require('../../../assets/image/screens/finance.png'),
+    Chat: require('../../../assets/image/screens/messages.png'),
+    Products: require('../../../assets/image/screens/shopping.png'),
+    Immovables: require('../../../assets/image/screens/immovables.png'),
+    Start: require('../../../assets/image/screens/Subtract.png'),
   };
 
   return (

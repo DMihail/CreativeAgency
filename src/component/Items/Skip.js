@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Button,
 } from 'react-native';
-import img from '../../../assets/image/Vector.png';
+import img from '../../../assets/image/icons/Vector.png';
 
 const Skip = ({navigator, routeName}) => {
   const massRoutes = [
@@ -24,7 +24,10 @@ const Skip = ({navigator, routeName}) => {
     navigator.navigate(massRoutes[index + 1]);
   };
   const turnToMain = () => {
-    // navigator.navigate('');
+    navigator.reset({
+      index: 0,
+      routes: [{name: 'Messenger'}],
+    });
   };
 
   if (routeName !== massRoutes[5]) {
