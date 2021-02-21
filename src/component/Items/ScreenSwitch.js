@@ -1,7 +1,6 @@
 import React from 'react';
 import {Image, View, StyleSheet} from 'react-native';
-import {Dimensions} from 'react-native';
-import RadialGradient from 'react-native-radial-gradient';
+import LinearGradient from 'react-native-linear-gradient';
 import Loading from './Loading';
 import WelcomeMessage from './WelcomeMessage';
 import DotsPagination from './DotsPagination';
@@ -11,18 +10,14 @@ import Skip from './Skip';
 import screens from '../../jsons/OnboardingItems.json';
 
 const ScreenSwitch = ({navigation, route}) => {
-  const windowWidth = Dimensions.get('window').width;
-  const windowHeight = Dimensions.get('window').height;
-
   return (
-    <RadialGradient
+    <LinearGradient
+      start={{x: 0.0, y: 0}} end={{x: 0.5, y: 1.0}}
+      locations={[0, 0.6]}
       style={{flex: 1}}
-      colors={['#23494E', '#042531']}
-      stops={[0.0, 1.0]}
-      center={[windowWidth / 2, windowHeight / 3]}
-      radius={200}>
+      colors={['#23494E', '#042531']}>
       {setScreen(navigation, route)}
-    </RadialGradient>
+    </LinearGradient>
   );
 };
 
