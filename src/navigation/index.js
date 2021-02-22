@@ -11,7 +11,7 @@ function Navigator() {
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName={'Loading'}>
+      initialRouteName={'Wallet'}>
       <Stack.Screen name="Loading" component={ScreenSwitch} />
       <Stack.Screen name="Purse" component={ScreenSwitch} />
       <Stack.Screen name="TuranMap" component={ScreenSwitch} />
