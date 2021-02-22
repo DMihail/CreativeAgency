@@ -25,33 +25,41 @@ const MessageList = ({navigator}) => {
 
 const ListItem = ({item, navigator}) => {
   return (
-    <View style={style.item}>
-      <View style={{flex: 1}}>
-        <Image source={item.item.image} />
-      </View>
-
-      <View
-        style={{flex: 4, flexDirection: 'row', justifyContent: 'space-around'}}>
-        <View style={{flexDirection: 'column', justifyContent: 'center'}}>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-            }}>
-            <Image source={require('../../../assets/image/icons/turan.png')} />
-            <Text style={style.title}>{item.item.title}</Text>
-            <Image source={require('../../../assets/image/icons/V.png')} />
-          </View>
-          <Text style={style.subtitle}>{item.item.subtitle}</Text>
+    <TouchableOpacity style={{flex: 2}}>
+      <View style={style.item}>
+        <View style={{flex: 1}}>
+          <Image source={item.item.image} />
         </View>
 
         <View
-          style={{flexDirection: 'column', justifyContent: 'space-between'}}>
-          <Text style={style.subtitle}>{item.item.time}</Text>
-          <Text style={style.subtitle}>{item.item.num}</Text>
+          style={{
+            flex: 4,
+            flexDirection: 'row',
+            justifyContent: 'space-around',
+          }}>
+          <View style={{flexDirection: 'column', justifyContent: 'center'}}>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}>
+              <Image
+                source={require('../../../assets/image/icons/turan.png')}
+              />
+              <Text style={style.title}>{item.item.title}</Text>
+              <Image source={require('../../../assets/image/icons/V.png')} />
+            </View>
+            <Text style={style.subtitle}>{item.item.subtitle}</Text>
+          </View>
+
+          <View
+            style={{flexDirection: 'column', justifyContent: 'space-between'}}>
+            <Text style={style.subtitle}>{item.item.time}</Text>
+            <Text style={style.subtitle}>{item.item.num}</Text>
+          </View>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -63,10 +71,11 @@ const style = StyleSheet.create({
   },
   item: {
     flex: 1,
+    height: 100,
     borderColor: 'black',
-    borderWidth: 5,
+    borderWidth: 1,
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
   },
   title: {
     color: 'white',
@@ -76,7 +85,7 @@ const style = StyleSheet.create({
   subtitle: {
     color: 'white',
     fontSize: 12,
-    textAlign: 'right',
+    textAlign: 'left',
     width: 200,
   },
 });
