@@ -14,7 +14,7 @@ const Adt = ({adt}) => {
 
 const style = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 3,
   },
   title: {
     color: 'white',

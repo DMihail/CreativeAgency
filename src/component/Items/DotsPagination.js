@@ -19,7 +19,7 @@ const DotsPagination = ({num}) => {
 
 const style = StyleSheet.create({
   container: {
-    flex: 2,
+    flex: 3,
   }
 });
 

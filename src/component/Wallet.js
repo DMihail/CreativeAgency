@@ -2,6 +2,7 @@ import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 import {Icon} from 'react-native-elements';
 import RadialGradient from 'react-native-radial-gradient';
+import TabNavigator from './Items/TabNavigator';
 
 const Wallet = ({navigation, route}) => {
   return (
@@ -13,6 +14,7 @@ const Wallet = ({navigation, route}) => {
       radius={200}>
       <View style={style.conteiner}>
         <Header />
+        <TabNavigator />
       </View>
     </RadialGradient>
   )
@@ -24,11 +26,10 @@ const Header = () => {
     <View style={style.header}>
       <Text style={style.title}>Кошелёк</Text>
       <Icon
-        raised
-        name="bell"
+        reverse
+        name="bell-o"
         type="font-awesome"
-        color="#f50"
-        onPress={() => console.log('hello')} />
+      />
     </View>
   );
 };
@@ -44,7 +45,11 @@ const style = StyleSheet.create({
   header: {
     flex: 1,
     flexDirection: 'row',
-
+  },
+  title: {
+    color: 'white',
+    fontSize: 17,
+    fontFamily: 'Montserrat',
   },
 });
 

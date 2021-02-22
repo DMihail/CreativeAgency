@@ -57,12 +57,12 @@ const setImage = (index) => {
 
 const style = StyleSheet.create({
   conteiner: {
-    flex: 12,
+    flex: 23,
     justifyContent: 'space-around',
     alignItems: 'center',
   },
   img: {
-    flex: 8,
+    flex: 10,
   },
 });
 

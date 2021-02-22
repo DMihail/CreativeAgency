@@ -14,7 +14,7 @@ const Message = ({message}) => {
 
 const style = StyleSheet.create({
   container: {
-    flex: 2,
+    flex: 3,
   },
   title: {
     color: 'white',
