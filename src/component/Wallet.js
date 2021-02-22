@@ -20,26 +20,16 @@ const Wallet = ({navigation, route}) => {
       radius={200}>
       <View style={style.conteiner}>
         <Header />
-        <LinearGradient
-          colors={['#ffffff', '#ffffff', '#ffffff']}
-          style={{height: 1}}
-        />
-        <LinearGradient
-          style={{height: 10}}
-          colors={['rgba(255, 255, 255, 0)', 'rgba(255, 255, 255, 0)']}
-        />
-
-        <View style={{flex: 3, flexDirection: 'row', justifyContent: 'center'}}>
+        <View style={{flex: 4, flexDirection: 'row', justifyContent: 'center'}}>
           <Image source={CardImg} />
         </View>
-        <View style={{flex: 2}}>
+        <View style={{flex: 1}}>
           <Dots
             length={3}
             active={1}
             passiveColor={'rgba(255, 212, 0, 0.2)'}
             activeColor={'#FFD400'}
             width={200}
-            paddingVertical={0}
           />
         </View>
         <Wallets />
@@ -61,8 +51,13 @@ const Header = () => {
 
 const Wallets = () => {
   return (
-    <View style={{flex: 2}}>
-      <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+    <View style={{flex: 5}}>
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-around',
+          marginBottom: 10,
+        }}>
         <Icon name="add-circle-outline" type="ionicon" color={'white'} />
         <Text style={style.walletsTitle}>Мои кошельки</Text>
         <Icon name="settings-sharp" type="ionicon" color={'white'} />
@@ -70,7 +65,7 @@ const Wallets = () => {
       <FlatList
         data={wallets}
         renderItem={(item) => {
-          return <Item />;
+          return <Item item={item.item} />;
         }}
         keyExtractor={(item) => item.id.toString()}
       />
@@ -93,32 +88,39 @@ const Item = ({item}) => {
           marginHorizontal: 20,
           marginVertical: 10,
         }}>
-        <Icon name="bitcoin" type="material-community" color={'white'} />
+        <View>
+          <Icon
+            name={item.iconName}
+            type="material-community"
+            color={item.iconColor}
+            size={50}
+          />
+        </View>
         <View>
           <Text
             style={{fontSize: 17, fontFamily: 'Montserrat', color: 'white'}}>
-            Bitcoin
+            {item.title}
           </Text>
           <Text style={{fontSize: 14, fontFamily: 'Montserrat', color: 'gray'}}>
-            Личный
+            {item.status}
           </Text>
         </View>
 
         <View>
-          <Image source={bitcoin} />
+          <Image source={item.graphic} />
           <Text
             style={{color: 'green', fontSize: 12, fontFamily: 'Montserrat'}}>
-            +5.2%
+            {item.graphicNum}
           </Text>
         </View>
 
         <View>
           <Text
             style={{fontSize: 17, fontFamily: 'Montserrat', color: 'white'}}>
-            12.334253
+            {item.num}
           </Text>
           <Text style={{fontSize: 14, fontFamily: 'Montserrat', color: 'gray'}}>
-            $24 256
+            {item.price}
           </Text>
         </View>
       </View>
@@ -147,7 +149,7 @@ const wallets = [
     title: 'Ethereum',
     iconName: 'ethereum',
     iconType: 'material-community',
-    iconColor: 'rgba(0, 0, 0, 0.1)',
+    iconColor: 'white',
     status: 'Рабочий',
     graphic: ethereum,
     graphicNum: '-1.5%',
@@ -183,7 +185,7 @@ const style = StyleSheet.create({
     flex: 1,
   },
   conteiner: {
-    flex: 10,
+    flex: 15,
     justifyContent: 'space-between',
   },
   header: {
@@ -191,7 +193,7 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginHorizontal: 24,
-    marginVertical: 24,
+    alignItems: 'center',
   },
   title: {
     color: 'white',
