@@ -3,6 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import ScreenSwitch from '../component/Items/ScreenSwitch';
 import Wallet from '../component/Wallet';
 import Messenger from '../component/Messenger';
+import Dialog from '../component/Dialog';
 
 function Navigator() {
   const Stack = createStackNavigator();
@@ -11,7 +12,7 @@ function Navigator() {
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName={'Wallet'}>
+      initialRouteName={'Dialog'}>
       <Stack.Screen name="Loading" component={ScreenSwitch} />
       <Stack.Screen name="Purse" component={ScreenSwitch} />
       <Stack.Screen name="TuranMap" component={ScreenSwitch} />
@@ -31,6 +32,7 @@ function Navigator() {
           title: 'Мессенджер',
         }}
       />
+      <Stack.Screen name="Dialog" component={Dialog} />
     </Stack.Navigator>
   );
 }
